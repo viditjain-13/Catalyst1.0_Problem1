@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "generated_at": "2026-11-19T08:51:50Z",
-    "target": "D:\\catalyst\\benchmarks\\cve-pyyaml",
+    "generated_at": "2026-11-19T11:23:57Z",
+    "target": "D:\\Catalyst\\Code\\demo_fixtures\\case_reachable",
     "counts": {
-      "reachable": 3,
+      "reachable": 1,
       "not_reachable": 0,
-      "uncertain": 1
+      "uncertain": 3
     },
     "total": 4,
     "function_resolution": {
@@ -31,132 +31,9 @@
   },
   "verdicts": [
     {
-      "id": "GHSA-6757-jp84-gxfx",
-      "package": "PyYAML",
-      "version": "5.3",
-      "aliases": [
-        "CVE-2020-1747",
-        "PYSEC-2020-96"
-      ],
-      "summary": "Improper Input Validation in PyYAML",
-      "verdict": "reachable",
-      "confidence": 0.9,
-      "reason": "Project code references yaml.load (app/app.py:11), which is the vulnerable function load.",
-      "function_mapping": {
-        "source": "fix_commit_diff",
-        "confidence": 0.9,
-        "functions": [
-          {
-            "name": "load",
-            "qualname": "load",
-            "module_hint": "lib.yaml",
-            "origin": "fix_commit_diff"
-          },
-          {
-            "name": "load_all",
-            "qualname": "load_all",
-            "module_hint": "lib.yaml",
-            "origin": "fix_commit_diff"
-          },
-          {
-            "name": "safe_load",
-            "qualname": "safe_load",
-            "module_hint": "lib.yaml",
-            "origin": "fix_commit_diff"
-          },
-          {
-            "name": "safe_load_all",
-            "qualname": "safe_load_all",
-            "module_hint": "lib.yaml",
-            "origin": "fix_commit_diff"
-          },
-          {
-            "name": "find_python_module",
-            "qualname": "find_python_module",
-            "module_hint": "lib.yaml.constructor",
-            "origin": "fix_commit_diff"
-          },
-          {
-            "name": "find_python_name",
-            "qualname": "find_python_name",
-            "module_hint": "lib.yaml.constructor",
-            "origin": "fix_commit_diff"
-          },
-          {
-            "name": "make_python_instance",
-            "qualname": "make_python_instance",
-            "module_hint": "lib.yaml.constructor",
-            "origin": "fix_commit_diff"
-          },
-          {
-            "name": "construct_python_object_apply",
-            "qualname": "construct_python_object_apply",
-            "module_hint": "lib.yaml.constructor",
-            "origin": "fix_commit_diff"
-          },
-          {
-            "name": "set_python_instance_state",
-            "qualname": "set_python_instance_state",
-            "module_hint": "lib.yaml.constructor",
-            "origin": "fix_commit_diff"
-          },
-          {
-            "name": "set_python_instance_state",
-            "qualname": "set_python_instance_state",
-            "module_hint": "lib3.yaml.constructor",
-            "origin": "fix_commit_diff"
-          }
-        ],
-        "fix_commits": [
-          "https://github.com/yaml/pyyaml/commit/0cedb2a0697b2bc49e4f3841b8d4590b6b15657e",
-          "https://github.com/yaml/pyyaml/commit/5080ba513377b6355a0502104846ee804656f1e0"
-        ],
-        "from_cache": true,
-        "note": ""
-      },
-      "evidence": {
-        "package_import_roots": [
-          "pyyaml",
-          "yaml"
-        ],
-        "package_imports": [
-          {
-            "file": "app/app.py",
-            "line": 2,
-            "module": "yaml"
-          }
-        ],
-        "package_usage_sites": 2,
-        "method": "direct_symbol_match",
-        "match_precision": "exact",
-        "call_path": [
-          {
-            "kind": "entry",
-            "symbol": "app.app:api_load",
-            "file": "app/app.py",
-            "line": 7
-          },
-          {
-            "kind": "library_call",
-            "caller": "app.app:api_load",
-            "target": "yaml.load",
-            "file": "app/app.py",
-            "line": 11,
-            "code": "_load = yaml.load(base64.b64decode(request.form[\"data\"]).decode(\"utf-8\"))"
-          },
-          {
-            "kind": "vulnerable_function",
-            "symbol": "load",
-            "module_hint": "lib.yaml"
-          }
-        ],
-        "call_path_text": "app.app:api_load (app/app.py:7) -> yaml.load [app/app.py:11] -> load (VULNERABLE)"
-      }
-    },
-    {
       "id": "GHSA-8q59-q68h-6hv4",
-      "package": "PyYAML",
-      "version": "5.3",
+      "package": "pyyaml",
+      "version": "5.0",
       "aliases": [
         "CVE-2020-14343",
         "PYSEC-2021-142"
@@ -164,7 +41,7 @@
       "summary": "Improper Input Validation in PyYAML",
       "verdict": "uncertain",
       "confidence": 0.3,
-      "reason": "No call path found, but the library module holding the vulnerable code could not be parsed.",
+      "reason": "The vulnerable function is not called directly, but it may be reached through the library's internal calls and the library source unavailable (offline or download failed).",
       "function_mapping": {
         "source": "fix_commit_diff",
         "confidence": 0.9,
@@ -207,47 +84,80 @@
         ],
         "package_imports": [
           {
-            "file": "app/app.py",
+            "file": "app.py",
             "line": 2,
             "module": "yaml"
           }
         ],
-        "package_usage_sites": 2,
-        "method": "library_call_graph"
+        "package_usage_sites": 1,
+        "method": "no_library_graph",
+        "dynamic_features": []
       }
     },
     {
-      "id": "PYSEC-2020-96",
-      "package": "PyYAML",
-      "version": "5.3",
+      "id": "GHSA-rprw-h62v-c2w7",
+      "package": "pyyaml",
+      "version": "5.0",
       "aliases": [
-        "CVE-2020-1747",
-        "GHSA-6757-jp84-gxfx"
+        "CVE-2017-18342",
+        "PYSEC-2018-49"
       ],
-      "summary": "",
+      "summary": "PyYAML insecurely deserializes YAML strings leading to arbitrary code execution",
       "verdict": "reachable",
-      "confidence": 0.55,
-      "reason": "Project code references yaml.load (app/app.py:11), which is the vulnerable function load.",
+      "confidence": 0.9,
+      "reason": "Project code references yaml.load (app.py:6), which is the vulnerable function load.",
       "function_mapping": {
-        "source": "llm",
-        "confidence": 0.55,
+        "source": "fix_commit_diff",
+        "confidence": 0.9,
         "functions": [
-          {
-            "name": "full_load",
-            "qualname": "full_load",
-            "module_hint": "",
-            "origin": "llm"
-          },
           {
             "name": "load",
             "qualname": "load",
-            "module_hint": "",
-            "origin": "llm"
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "load_all",
+            "qualname": "load_all",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "safe_load",
+            "qualname": "safe_load",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "safe_load_all",
+            "qualname": "safe_load_all",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "dump",
+            "qualname": "dump",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "safe_dump_all",
+            "qualname": "safe_dump_all",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "safe_dump",
+            "qualname": "safe_dump",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
           }
         ],
-        "fix_commits": [],
+        "fix_commits": [
+          "https://github.com/yaml/pyyaml/commit/7b68405c81db889f83c32846462b238ccae5be80"
+        ],
         "from_cache": true,
-        "note": "No fix-commit diff yielded functions; names inferred by LLM from advisory text."
+        "note": ""
       },
       "evidence": {
         "package_import_roots": [
@@ -256,70 +166,109 @@
         ],
         "package_imports": [
           {
-            "file": "app/app.py",
+            "file": "app.py",
             "line": 2,
             "module": "yaml"
           }
         ],
-        "package_usage_sites": 2,
+        "package_usage_sites": 1,
         "method": "direct_symbol_match",
         "match_precision": "exact",
         "call_path": [
           {
             "kind": "entry",
-            "symbol": "app.app:api_load",
-            "file": "app/app.py",
-            "line": 7
+            "symbol": "app:<module>",
+            "file": "app.py",
+            "line": 1
+          },
+          {
+            "kind": "project_call",
+            "caller": "app:<module>",
+            "callee": "app:main",
+            "file": "app.py",
+            "line": 14,
+            "code": "print(main(sys.argv[1] if len(sys.argv) > 1 else \"a: 1\"))"
+          },
+          {
+            "kind": "project_call",
+            "caller": "app:main",
+            "callee": "app:load_config",
+            "file": "app.py",
+            "line": 10,
+            "code": "return load_config(text)"
           },
           {
             "kind": "library_call",
-            "caller": "app.app:api_load",
+            "caller": "app:load_config",
             "target": "yaml.load",
-            "file": "app/app.py",
-            "line": 11,
-            "code": "_load = yaml.load(base64.b64decode(request.form[\"data\"]).decode(\"utf-8\"))"
+            "file": "app.py",
+            "line": 6,
+            "code": "return yaml.load(text)  # no Loader: unsafe default in PyYAML < 5.1"
           },
           {
             "kind": "vulnerable_function",
             "symbol": "load",
-            "module_hint": ""
+            "module_hint": "lib.yaml"
           }
         ],
-        "call_path_text": "app.app:api_load (app/app.py:7) -> yaml.load [app/app.py:11] -> load (VULNERABLE)"
+        "call_path_text": "app:<module> (app.py:1) -> app:main [called at app.py:14] -> app:load_config [called at app.py:10] -> yaml.load [app.py:6] -> load (VULNERABLE)"
+      }
+    },
+    {
+      "id": "PYSEC-2018-49",
+      "package": "pyyaml",
+      "version": "5.0",
+      "aliases": [
+        "CVE-2017-18342",
+        "GHSA-rprw-h62v-c2w7"
+      ],
+      "summary": "",
+      "verdict": "uncertain",
+      "confidence": 0.3,
+      "reason": "No vulnerable function could be mapped from the advisory, so absence of a call cannot be proven.",
+      "function_mapping": {
+        "source": "none",
+        "confidence": 0.1,
+        "functions": [],
+        "fix_commits": [],
+        "from_cache": true,
+        "note": "Could not map this advisory to any function. Treated as uncertain, never not_reachable."
+      },
+      "evidence": {
+        "package_import_roots": [
+          "pyyaml",
+          "yaml"
+        ],
+        "package_imports": [
+          {
+            "file": "app.py",
+            "line": 2,
+            "module": "yaml"
+          }
+        ],
+        "package_usage_sites": 1,
+        "dynamic_features": []
       }
     },
     {
       "id": "PYSEC-2021-142",
-      "package": "PyYAML",
-      "version": "5.3",
+      "package": "pyyaml",
+      "version": "5.0",
       "aliases": [
         "CVE-2020-14343",
         "GHSA-8q59-q68h-6hv4"
       ],
       "summary": "",
-      "verdict": "reachable",
-      "confidence": 0.55,
-      "reason": "Project code references yaml.load (app/app.py:11), which is the vulnerable function load.",
+      "verdict": "uncertain",
+      "confidence": 0.3,
+      "reason": "No vulnerable function could be mapped from the advisory, so absence of a call cannot be proven.",
       "function_mapping": {
-        "source": "llm",
-        "confidence": 0.55,
-        "functions": [
-          {
-            "name": "full_load",
-            "qualname": "full_load",
-            "module_hint": "",
-            "origin": "llm"
-          },
-          {
-            "name": "load",
-            "qualname": "load",
-            "module_hint": "",
-            "origin": "llm"
-          }
-        ],
+        "source": "none",
+        "confidence": 0.1,
+        "functions": [],
         "fix_commits": [],
         "from_cache": true,
-        "note": "No fix-commit diff yielded functions; names inferred by LLM from advisory text."
+        "note": "Could not map this advisory to any function. Treated as uncertain, never not_reachable."
       },
       "evidence": {
         "package_import_roots": [
@@ -328,36 +277,13 @@
         ],
         "package_imports": [
           {
-            "file": "app/app.py",
+            "file": "app.py",
             "line": 2,
             "module": "yaml"
           }
         ],
-        "package_usage_sites": 2,
-        "method": "direct_symbol_match",
-        "match_precision": "exact",
-        "call_path": [
-          {
-            "kind": "entry",
-            "symbol": "app.app:api_load",
-            "file": "app/app.py",
-            "line": 7
-          },
-          {
-            "kind": "library_call",
-            "caller": "app.app:api_load",
-            "target": "yaml.load",
-            "file": "app/app.py",
-            "line": 11,
-            "code": "_load = yaml.load(base64.b64decode(request.form[\"data\"]).decode(\"utf-8\"))"
-          },
-          {
-            "kind": "vulnerable_function",
-            "symbol": "load",
-            "module_hint": ""
-          }
-        ],
-        "call_path_text": "app.app:api_load (app/app.py:7) -> yaml.load [app/app.py:11] -> load (VULNERABLE)"
+        "package_usage_sites": 1,
+        "dynamic_features": []
       }
     }
   ]
