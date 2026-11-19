@@ -1,0 +1,105 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://openvex.dev/docs/public/vex-93398d28205e33f0e3a8a0297600e436",
+  "author": "local-vuln-reachability-scanner",
+  "role": "Automated reachability analysis",
+  "timestamp": "2026-11-19T11:26:14Z",
+  "version": 1,
+  "tooling": "local-vuln-reachability-scanner (Python ast + OSV)",
+  "statements": [
+    {
+      "vulnerability": {
+        "@id": "https://osv.dev/vulnerability/GHSA-8q59-q68h-6hv4",
+        "name": "GHSA-8q59-q68h-6hv4",
+        "aliases": [
+          "CVE-2020-14343",
+          "PYSEC-2021-142"
+        ],
+        "description": "Improper Input Validation in PyYAML"
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/case_not_reachable",
+          "subcomponents": [
+            {
+              "@id": "pkg:pypi/pyyaml@5.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Static analysis of case_not_reachable (Python AST, no code executed) found no call path to the vulnerable code in pyyaml 5.0 (functions: construct_python_object_new, set_python_instance_state, construct_python_object_new, set_python_instance_state; mapping source: fix_commit_diff; method: package_not_imported; confidence 0.60). No project file imports this package (assuming it is only a direct dependency; indirect use through other libraries was NOT analysed)."
+    },
+    {
+      "vulnerability": {
+        "@id": "https://osv.dev/vulnerability/GHSA-rprw-h62v-c2w7",
+        "name": "GHSA-rprw-h62v-c2w7",
+        "aliases": [
+          "CVE-2017-18342",
+          "PYSEC-2018-49"
+        ],
+        "description": "PyYAML insecurely deserializes YAML strings leading to arbitrary code execution"
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/case_not_reachable",
+          "subcomponents": [
+            {
+              "@id": "pkg:pypi/pyyaml@5.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Static analysis of case_not_reachable (Python AST, no code executed) found no call path to the vulnerable code in pyyaml 5.0 (functions: load, load_all, safe_load, safe_load_all, dump, safe_dump_all, safe_dump; mapping source: fix_commit_diff; method: package_not_imported; confidence 0.60). No project file imports this package (assuming it is only a direct dependency; indirect use through other libraries was NOT analysed)."
+    },
+    {
+      "vulnerability": {
+        "@id": "https://osv.dev/vulnerability/PYSEC-2018-49",
+        "name": "PYSEC-2018-49",
+        "aliases": [
+          "CVE-2017-18342",
+          "GHSA-rprw-h62v-c2w7"
+        ]
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/case_not_reachable",
+          "subcomponents": [
+            {
+              "@id": "pkg:pypi/pyyaml@5.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Static analysis of case_not_reachable (Python AST, no code executed) found no call path to the vulnerable code in pyyaml 5.0 (functions: n/a; mapping source: none; method: package_not_imported; confidence 0.60). No project file imports this package (assuming it is only a direct dependency; indirect use through other libraries was NOT analysed)."
+    },
+    {
+      "vulnerability": {
+        "@id": "https://osv.dev/vulnerability/PYSEC-2021-142",
+        "name": "PYSEC-2021-142",
+        "aliases": [
+          "CVE-2020-14343",
+          "GHSA-8q59-q68h-6hv4"
+        ]
+      },
+      "products": [
+        {
+          "@id": "pkg:generic/case_not_reachable",
+          "subcomponents": [
+            {
+              "@id": "pkg:pypi/pyyaml@5.0"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "Static analysis of case_not_reachable (Python AST, no code executed) found no call path to the vulnerable code in pyyaml 5.0 (functions: n/a; mapping source: none; method: package_not_imported; confidence 0.60). No project file imports this package (assuming it is only a direct dependency; indirect use through other libraries was NOT analysed)."
+    }
+  ]
+}

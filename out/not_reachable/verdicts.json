@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "generated_at": "2026-11-19T11:26:14Z",
+    "target": "D:\\Catalyst\\Code\\demo_fixtures\\case_not_reachable",
+    "counts": {
+      "reachable": 0,
+      "not_reachable": 4,
+      "uncertain": 0
+    },
+    "total": 4,
+    "function_resolution": {
+      "cache_hit": 4,
+      "fix_commit_diff": 0,
+      "llm": 0,
+      "unresolved": 0
+    },
+    "options": {
+      "assume_direct_deps": true,
+      "include_tests": false,
+      "offline": false,
+      "library_graph": true,
+      "min_mapping_confidence": 0.8
+    },
+    "limitations": [
+      "Only Python source files (.py) of the project are analysed; notebooks and non-Python code are not.",
+      "Test files are excluded unless --include-tests is given.",
+      "Dependency call graphs are name-based over-approximations built from the pinned release's source.",
+      "Packages never imported by project code may still be used via other dependencies (see --assume-direct-deps).",
+      "Compiled extension modules (C/Rust) cannot be analysed statically."
+    ]
+  },
+  "verdicts": [
+    {
+      "id": "GHSA-8q59-q68h-6hv4",
+      "package": "pyyaml",
+      "version": "5.0",
+      "aliases": [
+        "CVE-2020-14343",
+        "PYSEC-2021-142"
+      ],
+      "summary": "Improper Input Validation in PyYAML",
+      "verdict": "not_reachable",
+      "confidence": 0.6,
+      "reason": "No project file imports this package (assuming it is only a direct dependency; indirect use through other libraries was NOT analysed).",
+      "function_mapping": {
+        "source": "fix_commit_diff",
+        "confidence": 0.9,
+        "functions": [
+          {
+            "name": "construct_python_object_new",
+            "qualname": "construct_python_object_new",
+            "module_hint": "lib.yaml.constructor",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "set_python_instance_state",
+            "qualname": "set_python_instance_state",
+            "module_hint": "lib.yaml.constructor",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "construct_python_object_new",
+            "qualname": "construct_python_object_new",
+            "module_hint": "lib3.yaml.constructor",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "set_python_instance_state",
+            "qualname": "set_python_instance_state",
+            "module_hint": "lib3.yaml.constructor",
+            "origin": "fix_commit_diff"
+          }
+        ],
+        "fix_commits": [
+          "https://github.com/yaml/pyyaml/commit/a001f2782501ad2d24986959f0239a354675f9dc"
+        ],
+        "from_cache": true,
+        "note": ""
+      },
+      "evidence": {
+        "package_import_roots": [
+          "pyyaml",
+          "yaml"
+        ],
+        "package_imports": [],
+        "method": "package_not_imported"
+      }
+    },
+    {
+      "id": "GHSA-rprw-h62v-c2w7",
+      "package": "pyyaml",
+      "version": "5.0",
+      "aliases": [
+        "CVE-2017-18342",
+        "PYSEC-2018-49"
+      ],
+      "summary": "PyYAML insecurely deserializes YAML strings leading to arbitrary code execution",
+      "verdict": "not_reachable",
+      "confidence": 0.6,
+      "reason": "No project file imports this package (assuming it is only a direct dependency; indirect use through other libraries was NOT analysed).",
+      "function_mapping": {
+        "source": "fix_commit_diff",
+        "confidence": 0.9,
+        "functions": [
+          {
+            "name": "load",
+            "qualname": "load",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "load_all",
+            "qualname": "load_all",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "safe_load",
+            "qualname": "safe_load",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "safe_load_all",
+            "qualname": "safe_load_all",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "dump",
+            "qualname": "dump",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "safe_dump_all",
+            "qualname": "safe_dump_all",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          },
+          {
+            "name": "safe_dump",
+            "qualname": "safe_dump",
+            "module_hint": "lib.yaml",
+            "origin": "fix_commit_diff"
+          }
+        ],
+        "fix_commits": [
+          "https://github.com/yaml/pyyaml/commit/7b68405c81db889f83c32846462b238ccae5be80"
+        ],
+        "from_cache": true,
+        "note": ""
+      },
+      "evidence": {
+        "package_import_roots": [
+          "pyyaml",
+          "yaml"
+        ],
+        "package_imports": [],
+        "method": "package_not_imported"
+      }
+    },
+    {
+      "id": "PYSEC-2018-49",
+      "package": "pyyaml",
+      "version": "5.0",
+      "aliases": [
+        "CVE-2017-18342",
+        "GHSA-rprw-h62v-c2w7"
+      ],
+      "summary": "",
+      "verdict": "not_reachable",
+      "confidence": 0.6,
+      "reason": "No project file imports this package (assuming it is only a direct dependency; indirect use through other libraries was NOT analysed).",
+      "function_mapping": {
+        "source": "none",
+        "confidence": 0.1,
+        "functions": [],
+        "fix_commits": [],
+        "from_cache": true,
+        "note": "Could not map this advisory to any function. Treated as uncertain, never not_reachable."
+      },
+      "evidence": {
+        "package_import_roots": [
+          "pyyaml",
+          "yaml"
+        ],
+        "package_imports": [],
+        "method": "package_not_imported"
+      }
+    },
+    {
+      "id": "PYSEC-2021-142",
+      "package": "pyyaml",
+      "version": "5.0",
+      "aliases": [
+        "CVE-2020-14343",
+        "GHSA-8q59-q68h-6hv4"
+      ],
+      "summary": "",
+      "verdict": "not_reachable",
+      "confidence": 0.6,
+      "reason": "No project file imports this package (assuming it is only a direct dependency; indirect use through other libraries was NOT analysed).",
+      "function_mapping": {
+        "source": "none",
+        "confidence": 0.1,
+        "functions": [],
+        "fix_commits": [],
+        "from_cache": true,
+        "note": "Could not map this advisory to any function. Treated as uncertain, never not_reachable."
+      },
+      "evidence": {
+        "package_import_roots": [
+          "pyyaml",
+          "yaml"
+        ],
+        "package_imports": [],
+        "method": "package_not_imported"
+      }
+    }
+  ]
+}
