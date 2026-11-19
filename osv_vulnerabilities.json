@@ -1,0 +1,91 @@
+[
+  {
+    "package": "PyYAML",
+    "version": "5.3",
+    "id": "GHSA-6757-jp84-gxfx",
+    "aliases": [
+      "CVE-2020-1747",
+      "PYSEC-2020-96"
+    ],
+    "summary": "Improper Input Validation in PyYAML",
+    "references": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2020-1747",
+      "https://github.com/github/advisory-database/pull/4942",
+      "https://github.com/yaml/pyyaml/pull/386",
+      "https://github.com/yaml/pyyaml/commit/0cedb2a0697b2bc49e4f3841b8d4590b6b15657e",
+      "https://github.com/yaml/pyyaml/commit/5080ba513377b6355a0502104846ee804656f1e0",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1747",
+      "https://github.com/advisories/GHSA-6757-jp84-gxfx",
+      "https://github.com/pypa/advisory-database/tree/main/vulns/pyyaml/PYSEC-2020-96.yaml",
+      "https://github.com/yaml/pyyaml",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7PPAS6C4SZRDQLR7C22A5U3QOLXY33JX",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K5HEPD7LEVDPCITY5IMDYWXUMX37VFMY",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MMQXSZXNJT6ERABJZAAICI3DQSQLCP3D",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WORRFHPQVAFKKXXWLSSW6XKUYLWM6CSH",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZBJA3SGNJKCAYPSHOHWY3KBCWNM5NYK2",
+      "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00017.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-05/msg00017.html"
+    ]
+  },
+  {
+    "package": "PyYAML",
+    "version": "5.3",
+    "id": "GHSA-8q59-q68h-6hv4",
+    "aliases": [
+      "CVE-2020-14343",
+      "PYSEC-2021-142"
+    ],
+    "summary": "Improper Input Validation in PyYAML",
+    "references": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2020-14343",
+      "https://github.com/SeldonIO/seldon-core/issues/2252",
+      "https://github.com/yaml/pyyaml/issues/420",
+      "https://github.com/yaml/pyyaml/issues/420#issuecomment-663673966",
+      "https://github.com/yaml/pyyaml/commit/a001f2782501ad2d24986959f0239a354675f9dc",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1860466",
+      "https://github.com/advisories/GHSA-8q59-q68h-6hv4",
+      "https://github.com/pypa/advisory-database/tree/main/vulns/pyyaml/PYSEC-2021-142.yaml",
+      "https://github.com/yaml/pyyaml",
+      "https://pypi.org/project/PyYAML",
+      "https://www.oracle.com/security-alerts/cpuapr2022.html",
+      "https://www.oracle.com/security-alerts/cpujul2022.html"
+    ]
+  },
+  {
+    "package": "PyYAML",
+    "version": "5.3",
+    "id": "PYSEC-2020-96",
+    "aliases": [
+      "CVE-2020-1747",
+      "GHSA-6757-jp84-gxfx"
+    ],
+    "summary": "",
+    "references": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2020-1747",
+      "https://github.com/yaml/pyyaml/pull/386",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/WORRFHPQVAFKKXXWLSSW6XKUYLWM6CSH/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ZBJA3SGNJKCAYPSHOHWY3KBCWNM5NYK2/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/K5HEPD7LEVDPCITY5IMDYWXUMX37VFMY/",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00017.html",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-05/msg00017.html",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/MMQXSZXNJT6ERABJZAAICI3DQSQLCP3D/",
+      "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7PPAS6C4SZRDQLR7C22A5U3QOLXY33JX/",
+      "https://github.com/advisories/GHSA-6757-jp84-gxfx"
+    ]
+  },
+  {
+    "package": "PyYAML",
+    "version": "5.3",
+    "id": "PYSEC-2021-142",
+    "aliases": [
+      "CVE-2020-14343",
+      "GHSA-8q59-q68h-6hv4"
+    ],
+    "summary": "",
+    "references": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1860466",
+      "https://github.com/advisories/GHSA-8q59-q68h-6hv4"
+    ]
+  }
+]
