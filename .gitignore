@@ -1,5 +1,6 @@
 ﻿.venv/
 __pycache__/
-*.pyc
+.env
+api.env
+cache.db
 benchmarks/
-*.db

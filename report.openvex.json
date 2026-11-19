@@ -1,0 +1,10 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://openvex.dev/docs/public/vex-4f53cda18c2baa0c0354bb5f9a3ecbe5",
+  "author": "local-vuln-reachability-scanner",
+  "role": "Automated reachability analysis",
+  "timestamp": "2026-11-19T08:51:50Z",
+  "version": 1,
+  "tooling": "local-vuln-reachability-scanner (Python ast + OSV)",
+  "statements": []
+}
