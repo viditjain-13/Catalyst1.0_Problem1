@@ -28,7 +28,7 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: |
           # Change benchmarks/cve-pyyaml to "." when running on a target app repo
-          python scan.py benchmarks/cve-pyyaml
+          python scan.py .
 
       - name: Format PR comment
         run: |
